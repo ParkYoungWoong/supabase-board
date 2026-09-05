@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Supabase Board
 
-## Getting Started
+[Supabase 핵심 정리](https://heropy.dev/p/Q15h8Q) 글의 예제 프로젝트입니다.
+Next.js 16과 Supabase로 만든 게시판으로, 데이터베이스 조회와 수정, Google 로그인, 행 수준 보안(RLS), 스토리지 업로드를 다룹니다.
 
-First, run the development server:
+## 준비
+
+Supabase 프로젝트를 만든 뒤 루트에 `.env.local` 파일을 만들고 프로젝트 주소와 Publishable 키를 저장합니다.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_SUPABASE_URL=https://프로젝트ID.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+테이블과 정책, 버킷은 글에 있는 SQL을 Supabase 대시보드의 SQL Editor에서 순서대로 실행해 만듭니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 실행
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+브라우저에서 http://localhost:3000 을 열어 확인합니다.
